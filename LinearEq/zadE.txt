@@ -1,0 +1,24 @@
+N: 100
+	Jacobi: 0.0553032
+	Gauss-Seidl: 0.0376762
+	LU: 0.0713912
+N: 500
+	Jacobi: 1.43932
+	Gauss-Seidl: 0.99136
+	LU: 8.4367
+N: 1000
+	Jacobi: 5.97503
+	Gauss-Seidl: 3.94046
+	LU: 66.6721
+N: 2000
+	Jacobi: 23.3967
+	Gauss-Seidl: 15.6145
+	LU: 524.094
+N: 3000
+	Jacobi: 52.5141
+	Gauss-Seidl: 37.3818
+	LU: 1791.81
+N: 4000
+	Jacobi: 98.5641
+	Gauss-Seidl: 65.3103
+	LU: 4287.31

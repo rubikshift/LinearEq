@@ -1,0 +1,4 @@
+Jacobi:
+	Iteracje:29; czas: 6.08486; norma residuum: 5.41055e-10
+Gauss-Seidl:
+	Iteracje:19; czas: 4.09681; norma residuum: 6.81655e-10
