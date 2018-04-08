@@ -1,6 +1,16 @@
 #include <iostream>
 #include "solvingmethods.h"
 
+//#define MONITOR_RESIDUUM
+
+#ifdef MONITOR_RESIDUUM
+	#include <fstream>
+	const std::size_t maxIter = 1000;
+	auto jacobiMonitor = std::ofstream("zadC_jacobi.txt", std::ios::out);
+	auto gaussseidlMonitor = std::ofstream("zadC_gauss.txt", std::ios::out);
+#endif 
+
+
 const double STOP = 1. / 1000000000;
 
 BenchmarkResult benchmark(
@@ -55,7 +65,17 @@ unsigned int jacobi(
 		r->subtract(b);
 		iter++;
 		norm = r->norm();
+
+#ifdef MONITOR_RESIDUUM
+		jacobiMonitor << norm << std::endl;
+		if (iter == maxIter)
+			break;
+#endif
+
 	}
+#ifdef MONITOR_RESIDUUM
+	jacobiMonitor.close();
+#endif
 
 	return iter;
 }
@@ -90,7 +110,15 @@ unsigned int gaussSeidl(
 		iter++;
 		r->subtract(b);
 		norm = r->norm();
+#ifdef MONITOR_RESIDUUM
+		gaussseidlMonitor << norm << std::endl;
+		if (iter == maxIter)
+			break;
+#endif
 	}
+#ifdef MONITOR_RESIDUUM
+	gaussseidlMonitor.close();
+#endif
 
 	return iter;
 }

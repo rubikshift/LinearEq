@@ -23,7 +23,11 @@ int main()
 	}
 
 	std::cout << "Skonczylem zadanie B..." << std::endl;
-	/*std::cout << "Rozpoczynam zadanie C..." << std::endl;
+
+
+	//THIS PART DOES NOT HAVE STOP CONDITION!
+	//BE CAREFUL!
+	std::cout << "Rozpoczynam zadanie C..." << std::endl;
 	
 	{
 		auto A = initMatrixA(defaultN, 3, -1, -1);
@@ -40,6 +44,8 @@ int main()
 	}
 
 	std::cout << "Skonczylem zadanie C..." << std::endl;
+	//YOU HAVE BEEN WARNED
+
 	std::cout << "Rozpoczynam zadanie D..." << std::endl;
 
 	{
@@ -52,11 +58,11 @@ int main()
 		zadD.close();
 	}
 
-	std::cout << "Skonczylem zadanie D..." << std::endl;*/
+	std::cout << "Skonczylem zadanie D..." << std::endl;
 	std::cout << "Rozpoczynam zadanie E..." << std::endl;
 
 	{
-		const std::size_t N[] = { 100, 500, 1000, 2000, 3000, 4000 };
+		const std::size_t N[] = { 100, 200, 400, 800, 1600, 3200, 6400, 12800 };
 		auto zadE = std::ofstream("zadE.txt", std::ios::out);
 		for (std::size_t i = 0; i < sizeof(N) / sizeof(std::size_t); i++)
 		{
